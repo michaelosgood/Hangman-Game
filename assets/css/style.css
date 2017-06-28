@@ -1,0 +1,67 @@
+#logo {
+	color: white;
+	font-size: 70px;
+	text-align:center;
+	background-color: powderblue;
+}
+
+#instructions {
+	text-align: center;
+	color: powderblue;
+	font-size: 30px;
+}
+
+#start {
+	margin-left: 44%;
+	margin-right: auto;
+	padding: 10px;
+	margin-bottom: 3%;
+	background-color: powderblue;
+	color:white;
+	font-size: 20px;
+}
+
+#resetBtn {
+	margin-left: 44%;
+	margin-right: auto;
+	padding: 10px;
+	margin-bottom: 3%;
+	background-color: powderblue;
+	color:white;
+	font-size: 20px;
+}
+
+#games {
+	font-size: 30px;
+	margin-right:10%;
+	margin-left: 10%;
+	border: 5px solid powderblue;
+	color:powderblue;
+	text-align: center;
+	padding:5%;
+}
+ 
+#choices {
+	text-align: center;
+	color: powderblue;
+	font-size: 30px;
+}
+
+#usedLetters {
+	text-align: center;
+	color: powderblue;
+	font-size: 30px;
+}
+
+#wins {
+	text-align: center;
+	color: powderblue;
+	font-size: 30px;
+}
+
+#losses {
+	text-align: center;
+	color: powderblue;
+	font-size: 30px;
+}
+

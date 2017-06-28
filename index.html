@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hollywood Hangman</title>
+	<meta charset="utf-8" name="viewport" content="width-device-width, initial scale=1">
+	<!--Meyer's Reset -->
+ 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+
+ 	<!--my CSS stylesheet-->
+ 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+ 	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+
+<body>
+	<div class="container-fluid">
+		<div clas="row">
+			<div class="col-md-12 col-sm-12">
+				<h1 id="logo">Hollywood Hangman</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<p id="instructions">
+					Press the button to start playing, then type letters to guess the name of the movie. You have 10 choices.
+				</p>
+			</div>
+		</div>
+	</div>
+		<!--Start Playing Button-->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<button id="start" onclick="startGame()">Start Playing</button>
+			</div>
+			<div class="col-md-8">
+				<button id="resetBtn" onclick="resetGame()">Reset Game</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div id="games">
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">
+				<p id="choices">
+					Choices: 10
+				</p>
+			</div>
+		
+			<div class="col-md-3">
+				<p id="usedLetters">
+					Letters Used:
+				</p>
+			</div>
+
+			<div class="col-md-3">
+				<p id="wins">
+					Wins:
+				</p>
+			</div>
+
+			<div class="col-md-3">
+				<p id="losses">
+					Losses:
+				</p>
+			</div>
+		</div>
+	</div>
+
+<script type="text/javascript" src="assets/javascript/game.js"></script>
+</body>
+</html>
