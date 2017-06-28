@@ -1,3 +1,4 @@
+//Michael Osgood / Hangman Game 
 "use strict"; //all code will execute in strict mode
 
 //Variables for game 
@@ -99,7 +100,7 @@ function startGame(){
 
 
 
-//MISSION IMPOSSIBLE SECTION//
+//THIS IS THE BEGINNING OF THE MISSION IMPOSSIBLE SECTION
 //this will also lowercase their choices whenever they press a key
 document.onkeypress = function(event){
 	userGuess = event.key.toLowerCase();
@@ -166,7 +167,6 @@ document.onkeypress = function(event){
 		   (document.getElementById('Ltr16').innerHTML === 'l') &&
 		   (document.getElementById('Ltr17').innerHTML === 'e')){
 		   document.getElementById('instructions').innerHTML = "You Have Won!"; //changes instructions to 'you have won'
-		   document.getElementById('start').innerHTML = "Play Again"; //changes button to 'play again'
 		   wins++;
 		   console.log('user wins');
 		   document.getElementById('wins').innerHTML = "Wins: " + wins; //adds a win and displays it on the page 
@@ -188,18 +188,94 @@ document.onkeypress = function(event){
 			else if(guessesLeft === 0){
 				document.getElementById('instructions').innerHTML = "You Have Lost!";
 				losses++;
-				if(losses === 1){
-				//	var resetDiv = document.createElement('button'); //reset button is created
-				//	resetDiv.innerHTML = 'Reset the Game';
-
-				}
+				if(losses === 1){}//Need to work on this section still
 
 			}
 		}
-
 	}
+
+	//THIS IS THE BEGINNING OF THE TERMINATOR SECTION
+	//This is the rules for the terminator movie
+	if(movieSelection === "terminator") {
+		
+		//wrong answers for this puzzle are listed below
+		var wrongAnswers = ['b','c','d','f','g','h','j','k','l','p','q','s','u','v','w','x','y','z'];
+		
+		//right answers for this puzzle are listed below
+		//letters appear on page when answer is guessed correctly
+		if(userGuess === 't'){
+			document.getElementById('Ltr1').innerHTML = 't';
+			document.getElementById('Ltr8').innerHTML = 't';
+		}
+
+		if(userGuess === 'e'){
+			document.getElementById('Ltr2').innerHTML = 'e';
+		}
+
+		if(userGuess === 'r'){
+			document.getElementById('Ltr3').innerHTML = 'r';
+			document.getElementById('Ltr10').innerHTML = 'r';
+		}
+
+		if(userGuess === 'm'){
+			document.getElementById('Ltr4').innerHTML = 'm';
+		}
+		if(userGuess === 'i'){
+			document.getElementById('Ltr5').innerHTML = 'i';
+		}
+
+		if(userGuess === 'n'){
+			document.getElementById('Ltr6').innerHTML = 'n';
+		}
+
+		if(userGuess === 'a'){
+			document.getElementById('Ltr7').innerHTML = 'a';
+		}
+
+		if(userGuess === 'o'){
+			document.getElementById('Ltr9').innerHTML = 'o';
+		}
+
+
+		//if all answers are guessed correcty, this function is executed
+		if((document.getElementById('Ltr1').innerHTML === 't') &&
+		   (document.getElementById('Ltr2').innerHTML === 'e') &&
+		   (document.getElementById('Ltr3').innerHTML === 'r') &&
+		   (document.getElementById('Ltr4').innerHTML === 'm') &&
+		   (document.getElementById('Ltr5').innerHTML === 'i') &&
+		   (document.getElementById('Ltr6').innerHTML === 'n') &&
+		   (document.getElementById('Ltr7').innerHTML === 'a') &&
+		   (document.getElementById('Ltr9').innerHTML === 'o')){
+		   document.getElementById('instructions').innerHTML = "You Have Won!"; //changes instructions to 'you have won'
+		   wins++;
+		   console.log('user wins');
+		   document.getElementById('wins').innerHTML = "Wins: " + wins; //adds a win and displays it on the page 
+		   
+		}
+
+		//Used to countdown the choices that are remaining
+		for(var i = 0; i < wrongAnswers.length; i++){
+			if(userGuess === wrongAnswers[i]){
+				guessesLeft--; //the guesses will subtract by 1 
+				document.getElementById('choices').innerHTML = "Choices: " + guessesLeft; //displays the number of choices remaining
+				console.log('deduct a choice'); //logs that a choice has been deducted
+				var para = document.createElement('span'); //creates a span
+				var node = document.createTextNode(userGuess + ' '); 
+				para.appendChild(node);
+				var element = document.getElementById('usedLetters');
+				element.appendChild(para);
+			}
+			else if(guessesLeft === 0){
+				document.getElementById('instructions').innerHTML = "You Have Lost!";
+				losses++;
+				if(losses === 1){}//Need to work on this section still
+			}
+		}
+	}
+
+
 }
-//Need to figure out how to reset the game once the button is pushed
+
 
 //computer will check to see if letter is a correct choice or not
 
