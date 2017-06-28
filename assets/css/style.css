@@ -5,12 +5,13 @@
 	font-size: 70px;
 	text-align:center;
 	background-color: powderblue;
+	padding: 2%;
 }
 
 #instructions {
 	text-align: center;
 	color: powderblue;
-	font-size: 30px;
+	font-size: 27px;
 }
 
 #start {

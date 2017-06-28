@@ -189,6 +189,7 @@ document.onkeypress = function(event){
 				document.getElementById('instructions').innerHTML = "You Have Lost!";
 				losses++;
 				if(losses === 1){}//Need to work on this section still
+				//need to add 1 to losses section so it can update on the site
 
 			}
 		}
@@ -269,18 +270,276 @@ document.onkeypress = function(event){
 				document.getElementById('instructions').innerHTML = "You Have Lost!";
 				losses++;
 				if(losses === 1){}//Need to work on this section still
+				//need to add 1 to losses section so it can update on the site
 			}
 		}
 	}
 
+	//THIS IS THE BEGINNING OF THE KARATE KID SECTION
+	//This is the rules for the Karate Kid movie
+	if(movieSelection === "karatekid") {
+		
+		//wrong answers for this puzzle are listed below
+		var wrongAnswers = ['b','c','f','g','h','j','l','m','n','o','p','q','s','u','v','w','x','y','z'];
+		
+		//right answers for this puzzle are listed below
+		//letters appear on page when answer is guessed correctly
+		if(userGuess === 'k'){
+			document.getElementById('Ltr1').innerHTML = 'k';
+			document.getElementById('Ltr7').innerHTML = 'k';
+		}
 
+		if(userGuess === 'a'){
+			document.getElementById('Ltr2').innerHTML = 'a';
+			document.getElementById('Ltr4').innerHTML = 'a';
+		}
+
+		if(userGuess === 'r'){
+			document.getElementById('Ltr3').innerHTML = 'r';
+		}
+
+		if(userGuess === 't'){
+			document.getElementById('Ltr5').innerHTML = 't';
+		}
+		if(userGuess === 'e'){
+			document.getElementById('Ltr6').innerHTML = 'e';
+		}
+
+		if(userGuess === 'i'){
+			document.getElementById('Ltr8').innerHTML = 'i';
+		}
+
+		if(userGuess === 'd'){
+			document.getElementById('Ltr9').innerHTML = 'd';
+		}
+
+
+
+		//if all answers are guessed correcty, this function is executed
+		if((document.getElementById('Ltr1').innerHTML === 'k') &&
+		   (document.getElementById('Ltr2').innerHTML === 'a') &&
+		   (document.getElementById('Ltr3').innerHTML === 'r') &&
+		   (document.getElementById('Ltr5').innerHTML === 't') &&
+		   (document.getElementById('Ltr6').innerHTML === 'e') &&
+		   (document.getElementById('Ltr8').innerHTML === 'i') &&
+		   (document.getElementById('Ltr9').innerHTML === 'd')){
+		   document.getElementById('instructions').innerHTML = "You Have Won!"; //changes instructions to 'you have won'
+		   wins++;
+		   console.log('user wins');
+		   document.getElementById('wins').innerHTML = "Wins: " + wins; //adds a win and displays it on the page 
+		   
+		}
+
+		//Used to countdown the choices that are remaining
+		for(var i = 0; i < wrongAnswers.length; i++){
+			if(userGuess === wrongAnswers[i]){
+				guessesLeft--; //the guesses will subtract by 1 
+				document.getElementById('choices').innerHTML = "Choices: " + guessesLeft; //displays the number of choices remaining
+				console.log('deduct a choice'); //logs that a choice has been deducted
+				var para = document.createElement('span'); //creates a span
+				var node = document.createTextNode(userGuess + ' '); 
+				para.appendChild(node);
+				var element = document.getElementById('usedLetters');
+				element.appendChild(para);
+			}
+			else if(guessesLeft === 0){
+				document.getElementById('instructions').innerHTML = "You Have Lost!";
+				losses++;
+				if(losses === 1){}//Need to work on this section still
+				//need to add 1 to losses section so it can update on the site
+			}
+		}
+	}
+	
+	//THIS IS THE BEGINNING OF THE ROCKY SECTION
+	//This is the rules for the Rocky movie
+	if(movieSelection === "rocky") {
+		
+		//wrong answers for this puzzle are listed below
+		var wrongAnswers = ['a','b','d','e','f','g','h','i','j','l','m','n','p','q','s','t','u','v','w','x','y','z'];
+		
+		//right answers for this puzzle are listed below
+		//letters appear on page when answer is guessed correctly
+		if(userGuess === 'r'){
+			document.getElementById('Ltr1').innerHTML = 'r';
+		}
+
+		if(userGuess === 'o'){
+			document.getElementById('Ltr2').innerHTML = 'o';
+		}
+
+		if(userGuess === 'c'){
+			document.getElementById('Ltr3').innerHTML = 'c';
+		}
+
+		if(userGuess === 'k'){
+			document.getElementById('Ltr4').innerHTML = 'k';
+		}
+		if(userGuess === 'y'){
+			document.getElementById('Ltr5').innerHTML = 'y';
+		}
+
+
+		//if all answers are guessed correcty, this function is executed
+		if((document.getElementById('Ltr1').innerHTML === 'r') &&
+		   (document.getElementById('Ltr2').innerHTML === 'o') &&
+		   (document.getElementById('Ltr3').innerHTML === 'c') &&
+		   (document.getElementById('Ltr4').innerHTML === 'k') &&
+		   (document.getElementById('Ltr5').innerHTML === 'y')){
+		   document.getElementById('instructions').innerHTML = "You Have Won!"; //changes instructions to 'you have won'
+		   wins++;
+		   console.log('user wins');
+		   document.getElementById('wins').innerHTML = "Wins: " + wins; //adds a win and displays it on the page 
+		   
+		}
+
+		//Used to countdown the choices that are remaining
+		for(var i = 0; i < wrongAnswers.length; i++){
+			if(userGuess === wrongAnswers[i]){
+				guessesLeft--; //the guesses will subtract by 1 
+				document.getElementById('choices').innerHTML = "Choices: " + guessesLeft; //displays the number of choices remaining
+				console.log('deduct a choice'); //logs that a choice has been deducted
+				var para = document.createElement('span'); //creates a span
+				var node = document.createTextNode(userGuess + ' '); 
+				para.appendChild(node);
+				var element = document.getElementById('usedLetters');
+				element.appendChild(para);
+			}
+			else if(guessesLeft === 0){
+				document.getElementById('instructions').innerHTML = "You Have Lost!";
+				losses++;
+				if(losses === 1){}//Need to work on this section still
+				//need to add 1 to losses section so it can update on the site
+			}
+		}
+	}
+
+	//THIS IS THE BEGINNING OF THE STAR WARS SECTION
+	//This is the rules for the Star Wars movie
+	if(movieSelection === "starwars") {
+		
+		//wrong answers for this puzzle are listed below
+		var wrongAnswers = ['b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','u','v','x','y','z'];
+		
+		//right answers for this puzzle are listed below
+		//letters appear on page when answer is guessed correctly
+		if(userGuess === 's'){
+			document.getElementById('Ltr1').innerHTML = 's';
+			document.getElementById('Ltr8').innerHTML = 's';
+		}
+
+		if(userGuess === 't'){
+			document.getElementById('Ltr2').innerHTML = 't';
+		}
+
+		if(userGuess === 'a'){
+			document.getElementById('Ltr3').innerHTML = 'a';
+			document.getElementById('Ltr6').innerHTML = 'a';
+		}
+
+		if(userGuess === 'r'){
+			document.getElementById('Ltr4').innerHTML = 'r';
+			document.getElementById('Ltr7').innerHTML = 'r';
+		}
+		if(userGuess === 'w'){
+			document.getElementById('Ltr5').innerHTML = 'w';
+		}
+
+		//if all answers are guessed correcty, this function is executed
+		if((document.getElementById('Ltr1').innerHTML === 's') &&
+		   (document.getElementById('Ltr2').innerHTML === 't') &&
+		   (document.getElementById('Ltr3').innerHTML === 'a') &&
+		   (document.getElementById('Ltr4').innerHTML === 'r') &&
+		   (document.getElementById('Ltr5').innerHTML === 'w')){
+		   document.getElementById('instructions').innerHTML = "You Have Won!"; //changes instructions to 'you have won'
+		   wins++;
+		   console.log('user wins');
+		   document.getElementById('wins').innerHTML = "Wins: " + wins; //adds a win and displays it on the page 
+		   
+		}
+
+		//Used to countdown the choices that are remaining
+		for(var i = 0; i < wrongAnswers.length; i++){
+			if(userGuess === wrongAnswers[i]){
+				guessesLeft--; //the guesses will subtract by 1 
+				document.getElementById('choices').innerHTML = "Choices: " + guessesLeft; //displays the number of choices remaining
+				console.log('deduct a choice'); //logs that a choice has been deducted
+				var para = document.createElement('span'); //creates a span
+				var node = document.createTextNode(userGuess + ' '); 
+				para.appendChild(node);
+				var element = document.getElementById('usedLetters');
+				element.appendChild(para);
+			}
+			else if(guessesLeft === 0){
+				document.getElementById('instructions').innerHTML = "You Have Lost!";
+				losses++;
+				if(losses === 1){}//Need to work on this section still
+				//need to add 1 to losses section so it can update on the site
+			}
+		}
+	}
+
+//////////////////
+//THIS IS THE BEGINNING OF THE AVATAR SECTION
+	//This is the rules for the Avatar movie
+	if(movieSelection === "avatar") {
+		
+		//wrong answers for this puzzle are listed below
+		var wrongAnswers = ['b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','s','u','w','x','y','z'];
+		
+		//right answers for this puzzle are listed below
+		//letters appear on page when answer is guessed correctly
+		if(userGuess === 'a'){
+			document.getElementById('Ltr1').innerHTML = 'a';
+			document.getElementById('Ltr3').innerHTML = 'a';
+			document.getElementById('Ltr5').innerHTML = 'a';
+		}
+
+		if(userGuess === 'v'){
+			document.getElementById('Ltr2').innerHTML = 'v';
+		}
+
+		if(userGuess === 't'){
+			document.getElementById('Ltr4').innerHTML = 't';
+		}
+
+		if(userGuess === 'r'){
+			document.getElementById('Ltr6').innerHTML = 'r';
+		}
+
+		//if all answers are guessed correcty, this function is executed
+		if((document.getElementById('Ltr1').innerHTML === 'a') &&
+		   (document.getElementById('Ltr2').innerHTML === 'v') &&
+		   (document.getElementById('Ltr4').innerHTML === 't') &&
+		   (document.getElementById('Ltr6').innerHTML === 'r')){
+		   document.getElementById('instructions').innerHTML = "You Have Won!"; //changes instructions to 'you have won'
+		   wins++;
+		   console.log('user wins');
+		   document.getElementById('wins').innerHTML = "Wins: " + wins; //adds a win and displays it on the page 
+		   
+		}
+
+		//Used to countdown the choices that are remaining
+		for(var i = 0; i < wrongAnswers.length; i++){
+			if(userGuess === wrongAnswers[i]){
+				guessesLeft--; //the guesses will subtract by 1 
+				document.getElementById('choices').innerHTML = "Choices: " + guessesLeft; //displays the number of choices remaining
+				console.log('deduct a choice'); //logs that a choice has been deducted
+				var para = document.createElement('span'); //creates a span
+				var node = document.createTextNode(userGuess + ' '); 
+				para.appendChild(node);
+				var element = document.getElementById('usedLetters');
+				element.appendChild(para);
+			}
+			else if(guessesLeft === 0){
+				document.getElementById('instructions').innerHTML = "You Have Lost!";
+				losses++;
+				if(losses === 1){}//Need to work on this section still
+				//need to add 1 to losses section so it can update on the site
+			}
+		}
+	}
 }
 
 
-//computer will check to see if letter is a correct choice or not
-
-//if a correct choice, then the the letter will appear on the correct blank space
-
-//if an inccorect choice, then number of guesses remaining will subtract by one
-//also the letter will appear in 'already guessed' section
 
