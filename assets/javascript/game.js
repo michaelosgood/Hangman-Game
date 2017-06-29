@@ -8,11 +8,14 @@ var losses = 0;
 var guessesLeft = 10;
 var movieSelection; 
 var gameDiv = document.getElementById("games");
+var gameOver = false;
 
 
 //resets game
 function resetGame(){
-	location.reload();
+	guessesLeft = 10;
+	movieSelection = '';
+	startGame();
 }
 
 //Generate a random movie for user to guess
@@ -188,12 +191,20 @@ document.onkeypress = function(event){
 			else if(guessesLeft === 0){
 				document.getElementById('instructions').innerHTML = "You Have Lost!";
 				losses++;
-				if(losses === 1){}//Need to work on this section still
+				console.log('user lost');
+				document.getElementById('losses').innerHTML = "Losses: " + losses;
+			}
+			
+			if (gameOver === true);{
+				resetGame();
+			}
+
+				//Need to work on this section still
 				//need to add 1 to losses section so it can update on the site
 
 			}
 		}
-	}
+	
 
 	//THIS IS THE BEGINNING OF THE TERMINATOR SECTION
 	//This is the rules for the terminator movie
@@ -539,7 +550,7 @@ document.onkeypress = function(event){
 			}
 		}
 	}
-}
 
+}
 
 
