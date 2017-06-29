@@ -16,6 +16,9 @@ function resetGame(){
 	guessesLeft = 10;
 	movieSelection = '';
 	startGame();
+	for (var i = 1; i < 18; i++) {
+		document.getElementById('Ltr' + i).innerHTML = '';
+	}
 }
 
 //Generate a random movie for user to guess
